@@ -31,6 +31,7 @@ export default defineConfig({
       '.mjs',
       '.ts',
       '.tsx',
+      '.ttf',
       '.vue',
     ],
   },

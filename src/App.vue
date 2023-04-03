@@ -13,7 +13,7 @@
 <style>
 @font-face {
   font-family:"Queensides";
-  src: url("src/assets/Queensides-3z7Ey.ttf") format('truetype');
+  src: url("/public/Queensides-3z7Ey.ttf") format('truetype');
 }
 h1, h2, h3 {
   font-family: "Queensides", serif;
