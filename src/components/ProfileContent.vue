@@ -5,6 +5,7 @@
       max-width="50%"
       rounded="lg"
       width="100%"
+      height="200"
       class="pa-4 mx-auto mt-10"
       id="contentBox"
       >
@@ -50,7 +51,7 @@ const onContentEnter = (el: Element, done: () => void) => {
   anime({
     targets: '#contentBox',
     height: el.getBoundingClientRect().height + 200,
-    easing: 'easeInOutBack',
+    easing: 'easeInOutSine',
     duration: 2000,
     direction: 'normal',
   });
