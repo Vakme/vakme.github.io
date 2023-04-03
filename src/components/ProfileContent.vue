@@ -2,20 +2,19 @@
   <div class="profile-content">
     <v-sheet
       elevation="12"
-      max-width="50%"
       rounded="lg"
-      width="100%"
-      height="200"
-      class="pa-4 mx-auto mt-10"
+      :width="mdAndDown ? '100%': '50%'"
+      height="250"
+      class="pa-4 mx-sm-auto mt-10"
       id="contentBox"
       >
-      <div class="mx-auto text-center my-5">
+      <div ref="headerRef" class="mx-auto my-5">
         <Transition appear class="howdy" :css="false" @enter="onEnter" name="howdy">
-          <div v-html="howdy" />
+          <div v-html="howdy" :class="{scaledHeader: mdAndDown}" />
         </Transition>
       </div>
       <Transition class="external" :css="false" @enter="onContentEnter" name="content">
-        <div ref="contentRef" v-show="animate" v-html="content" />
+        <div v-show="animate" v-html="content" />
       </Transition>
     </v-sheet>
   </div>
@@ -26,10 +25,13 @@ import anime from "animejs";
 import { useReadme } from "@/api/use-api.composable";
 import howdy from "@/assets/howdy.svg?raw";
 import {ref} from "vue";
+import { useDisplay } from "vuetify";
+
+const { mdAndDown } = useDisplay();
 
 const content = useReadme();
 const animate = ref(false);
-const contentRef = ref(null);
+const headerRef = ref<Element>();
 
 const onEnter = (el: Element, done: () => void) => {
   anime({
@@ -47,10 +49,9 @@ const onEnter = (el: Element, done: () => void) => {
 }
 
 const onContentEnter = (el: Element, done: () => void) => {
-  console.log(el, el.getBoundingClientRect().height + 200)
   anime({
     targets: '#contentBox',
-    height: el.getBoundingClientRect().height + 200,
+    height: el.getBoundingClientRect().height + 75 + (headerRef.value?.getBoundingClientRect().height ?? 0),
     easing: 'easeInOutSine',
     duration: 2000,
     direction: 'normal',
@@ -71,4 +72,8 @@ const onContentEnter = (el: Element, done: () => void) => {
 
 <style lang="scss">
 @import "external";
+
+.scaledHeader {
+  transform: scale(50%) translateX(-150px);
+}
 </style>
