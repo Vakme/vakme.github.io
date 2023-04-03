@@ -23,7 +23,7 @@
 <script setup lang="ts">
 import anime from "animejs";
 import { useReadme } from "@/api/use-api.composable";
-import howdy from "@/assets/howdy.svg?raw";
+import howdy from "@/assets/test.svg?raw";
 import {ref} from "vue";
 import { useDisplay } from "vuetify";
 
@@ -34,8 +34,9 @@ const animate = ref(false);
 const headerRef = ref<Element>();
 
 const onEnter = (el: Element, done: () => void) => {
+  console.log(el)
   anime({
-    targets: el.getElementsByTagName('path'),
+    targets: el.getElementsByTagName('svg')[0].children,
     strokeDashoffset: [anime.setDashoffset, 0],
     easing: 'easeInOutBack',
     duration: 2000,
