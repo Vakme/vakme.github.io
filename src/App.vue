@@ -1,6 +1,12 @@
 <template>
   <v-app class="app">
-    <v-main>
+    <Particles
+      id="tsparticles"
+      :particlesInit="particlesInit"
+      :options="particles"
+      class="position-relative"
+    />
+    <v-main class="main">
       <ProfileContent />
     </v-main>
   </v-app>
@@ -8,6 +14,16 @@
 
 <script setup lang="ts">
   import ProfileContent from '@/components/ProfileContent.vue'
+  import particles from '@/particles'
+  import { Engine } from "tsparticles-engine";
+  import { loadStarsPreset } from "tsparticles-preset-stars";
+  import { ParticlesComponent as Particles } from "vue3-particles"
+
+  console.log(particles)
+
+  async function particlesInit(engine: Engine): Promise<void> {
+    await loadStarsPreset(engine);
+  }
 </script>
 
 <style>
@@ -20,5 +36,8 @@ h1, h2, h3 {
 }
 body {
   font-family: "Roboto", sans-serif;
+}
+.main {
+  z-index: 100;
 }
 </style>

@@ -4,12 +4,27 @@
   hr {
     display: none;
   }
-  ul,
+  h3, ul,
   ol {
     margin-top: 12px;
     margin-bottom: 24px;
   }
+  h3 {
+    font-size: 36px;
+  }
   li {
     margin-left: 24px;
+  }
+  p {
+    text-align: left;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+  a {
+    text-decoration: none;
+    margin-right: 6px;
+  }
+  .hidden {
+    display: none;
   }
 }

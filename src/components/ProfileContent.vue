@@ -5,10 +5,10 @@
       rounded="lg"
       :width="mdAndDown ? '100%': '50%'"
       height="250"
-      class="pa-4 mx-sm-auto mt-10"
+      class="pa-4 mx-sm-auto my-10"
       id="contentBox"
       >
-      <div ref="headerRef" class="mx-auto my-5">
+      <div ref="headerRef" class="mx-5 my-5">
         <Transition appear class="howdy" :css="false" @enter="onEnter" name="howdy">
           <div v-html="howdy" :class="{scaledHeader: mdAndDown}" />
         </Transition>
