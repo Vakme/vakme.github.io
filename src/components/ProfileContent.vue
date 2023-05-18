@@ -8,7 +8,7 @@
       class="pa-4 mx-sm-auto my-10"
       id="contentBox"
       >
-      <div ref="headerRef" class="mx-5 my-5">
+      <div ref="headerRef" class="mx-sm-5 my-5">
         <Transition appear class="howdy" :css="false" @enter="onEnter" name="howdy">
           <div v-html="howdy" :class="{scaledHeader: mdAndDown}" />
         </Transition>
@@ -23,7 +23,7 @@
 <script setup lang="ts">
 import anime from "animejs";
 import { useReadme } from "@/api/use-api.composable";
-import howdy from "@/assets/test.svg?raw";
+import howdy from "@/assets/howdy.svg?raw";
 import {ref} from "vue";
 import { useDisplay } from "vuetify";
 
@@ -34,7 +34,6 @@ const animate = ref(false);
 const headerRef = ref<Element>();
 
 const onEnter = (el: Element, done: () => void) => {
-  console.log(el)
   anime({
     targets: el.getElementsByTagName('svg')[0].children,
     strokeDashoffset: [anime.setDashoffset, 0],

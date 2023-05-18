@@ -5,18 +5,8 @@ const options: ISourceOptions = {
   autoPlay: true,
   background: {
     color: {
-      value: "#232741",
+      value: "#16182d",
     },
-  },
-  backgroundMask: {
-    composite: "destination-out" as const,
-    cover: {
-      color: {
-        value: "#fff",
-      },
-      opacity: 1,
-    },
-    enable: false,
   },
   defaultThemes: {},
   delay: 0,
@@ -44,59 +34,6 @@ const options: ISourceOptions = {
       },
       bounce: {
         distance: 200,
-      },
-      bubble: {
-        distance: 250,
-        duration: 2,
-        mix: false,
-        opacity: 0,
-        size: 0,
-        divs: {
-          distance: 200,
-          duration: 0.4,
-          mix: false,
-          selectors: {},
-        },
-      },
-      connect: {
-        distance: 80,
-        links: {
-          opacity: 0.5,
-        },
-        radius: 60,
-      },
-      grab: {
-        distance: 400,
-        links: {
-          blink: false,
-          consent: false,
-          opacity: 1,
-        },
-      },
-      push: {
-        default: true,
-        groups: {},
-        quantity: 4,
-      },
-      remove: {
-        quantity: 2,
-      },
-      repulse: {
-        distance: 400,
-        duration: 0.4,
-        factor: 100,
-        speed: 1,
-        maxSpeed: 50,
-        easing: "ease-out-quad",
-        divs: {
-          distance: 200,
-          duration: 0.4,
-          factor: 100,
-          speed: 1,
-          maxSpeed: 50,
-          easing: "ease-out-quad",
-          selectors: {},
-        },
       },
       slow: {
         factor: 3,
@@ -165,7 +102,7 @@ const options: ISourceOptions = {
           value: 1,
         },
       },
-      enable: false,
+      enable: true,
       mode: "bounce" as const,
       overlap: {
         enable: true,
@@ -201,7 +138,6 @@ const options: ISourceOptions = {
         },
       },
     },
-    groups: {},
     move: {
       angle: {
         offset: 0,
@@ -262,7 +198,6 @@ const options: ISourceOptions = {
       trail: {
         enable: false,
         length: 10,
-        fill: {},
       },
       vibrate: false,
       warp: false,
@@ -309,7 +244,6 @@ const options: ISourceOptions = {
       },
     },
     shape: {
-      options: {},
       type: "circle" as const,
     },
     size: {
@@ -380,7 +314,6 @@ const options: ISourceOptions = {
       path: false,
     },
     destroy: {
-      bounds: {},
       mode: "none" as const,
       split: {
         count: 1,
