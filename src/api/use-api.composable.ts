@@ -1,22 +1,12 @@
-import { onMounted, ref } from "vue";
 import DOMPurify from "dompurify";
 import { marked } from "marked";
+import {useObservable} from "@vueuse/rxjs";
+import {map} from "rxjs";
 
 import {
   getReadme,
 } from "./github/api";
 
 export const useReadme = () => {
-  const data = ref<string | null>(null);
-
-  const getData = async () => {
-    const res = await getReadme();
-    data.value = DOMPurify.sanitize(marked.parse(res));
-  };
-
-
-  onMounted(async () => {
-    await getData();
-  });
-  return data;
+  return useObservable(getReadme().pipe(map(res => DOMPurify.sanitize(marked.parse(res)))));
 }
