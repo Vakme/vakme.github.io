@@ -19,8 +19,6 @@
   import { loadStarsPreset } from "tsparticles-preset-stars";
   import { ParticlesComponent as Particles } from "vue3-particles"
 
-  console.log(particles)
-
   async function particlesInit(engine: Engine): Promise<void> {
     await loadStarsPreset(engine);
   }
