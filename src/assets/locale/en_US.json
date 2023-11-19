@@ -1,0 +1,16 @@
+{
+  "MENU": {
+    "HOME": "Bielak.dev",
+    "ABOUT_ME": "About Me",
+    "EXPERIENCE": "Experience",
+    "PROJECTS": "Projects",
+    "CONTACT": "Contact"
+  },
+  "FOOTER": {
+    "TITLE": "Bielak.dev"
+  },
+  "HOME": {
+    "TITLE": "Senior Software Engineer",
+    "CONTENT": "I'm a senior frontend (Angular/React) developer living in Kraków, Poland.\nI'm fond of clouds - I'm used to working with Azure and AWS, and I also host personal projects on GCP.\nI consider Vue.js my favorite framework. My favorite backend is Nodejs + TypeScript.\nI have been working in React and React Native more and more recently.\n"
+  }
+}

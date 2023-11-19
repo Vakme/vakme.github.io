@@ -8,7 +8,7 @@
       class="pa-4 mx-sm-auto my-10"
       id="contentBox"
       >
-      <div ref="headerRef" class="mx-sm-5 my-5">
+      <div ref="headerRef" class="mx-sm-5 my-5 content-box">
         <Transition appear class="howdy" :css="false" @enter="onEnter" name="howdy">
           <div v-html="howdy" :class="{scaledHeader: mdAndDown}" />
         </Transition>
@@ -75,5 +75,9 @@ const onContentEnter = (el: Element, done: () => void) => {
 
 .scaledHeader {
   transform: scale(50%) translateX(-150px);
+}
+
+.content-box {
+  background-color: black;
 }
 </style>
