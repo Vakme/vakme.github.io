@@ -1,0 +1,31 @@
+name: Build And Deploy Portfolio
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build_vue:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    name: Build Portfolio
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build Portfolio
+        run: |
+          npm ci
+          npm run build
+          cd dist
+          git config --global user.email "${{ env.gitemail }}"
+          git config --global user.name "${{ env.gitname }}"
+          git init
+          git add -A
+          git commit -m '${{ env.gitmsg }}'
+          git push -f https://${{ github.repository_owner }}:${{ env.token }}@github.com/${{ github.repository }}.git master:gh-pages
+        env:
+          token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
+          gitemail: publisher@vakme.github.io
+          gitname: Github Page Publisher [bot]
+          gitmsg: Publishing pages for job ${{ github.workflow }}
