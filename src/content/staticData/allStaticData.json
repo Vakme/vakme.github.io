@@ -1,7 +1,7 @@
 {
   "profileImage": "./images/portrait.jpg",
   "profileAlt": "Photo of Aleksandra Bielak",
-  "profileLink": "/about-me",
+  "profileLink": "./about-me",
   "profileTitle": "Lead Frontend Software Engineer",
   "profileName": "Aleksandra Bielak",
   "github": "https://github.com/Vakme",
