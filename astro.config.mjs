@@ -8,7 +8,6 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://vakme.github.io',
-  base: '/',
   integrations: [preact(), icon(), sitemap({
     filter: (page) =>
       !page.includes("/blog/tags") &&
