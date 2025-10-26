@@ -159,8 +159,8 @@ const loadingAriaLabel = isLoading ? `${buttonAriaLabel} - Loading` : buttonAria
         aria-pressed={isActive}
         {...externalAttributes}
     >
-        {iconName && <Icon name={iconName} class={iconClasses[variant]} aria-hidden="true" />}
         {isLoading && <Icon name="mdi:loading" class="animate-spin" aria-hidden="true" />}
         {loadingText}
+        {iconName && <Icon name={iconName} class={iconClasses[variant]} aria-hidden="true" />}
     </a>
 </div>

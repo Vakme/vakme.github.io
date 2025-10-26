@@ -1,33 +1,32 @@
 ---
-const allTools = [
-  "html",
+import { languages } from "../../utils/languages";
+const allTools: (keyof typeof languages)[] = [
   "javascript",
   "ts",
+    "java",
+    "python",
+    "react",
+    "reactnative",
+    "vue",
+    "vite",
   "angular",
-  "astro",
-  
-  "node",
-
+    "nx",
+    "rxjs",
+    "html",
   "css",
-  "tailwind",
-  "sass",
-  "bootstrap",
 
-  "mongo",
-  "firebase",
-  "mysql",
+    "jest",
+    "playwright",
+    "storybook",
 
-  "cloudflare",
-
-  "figma",
-  "vercel",
-  "netlify",
+    "node",
+    "expressjs",
+    "yarn",
+    "mongo",
+    "firebase",
+    "postgresql",
   
   "git",
-  "markdown",
-
-  "php",
-  "wordpress",
 ];
 
 import Capsule from "../ui/Capsule.astro";

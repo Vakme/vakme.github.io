@@ -1,0 +1,22 @@
+---
+import HowdySvg from './../../icons/howdy.svg?raw'
+---
+
+<div class="md:size-1/2 flex items-start justify-start">
+<Fragment set:html={HowdySvg} />
+</div>
+
+<script>
+    import {animate, svg} from "animejs";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        animate(svg.createDrawable('#howdy path'),{
+            draw: ['0 0', '0 1'],
+            easing: 'easeInOutBack',
+            duration: 2000,
+            delay: function(el, i) { return i * 250 },
+            direction: 'normal',
+        });
+    });
+
+</script>

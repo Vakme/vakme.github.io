@@ -1,0 +1,69 @@
+[
+  {
+    "date": "Sep 2023 - Now",
+    "title": "Lead Software Engineer",
+    "company": "Spyrosoft SA",
+    "description": [
+      "Lead a team of frontend engineers, managing their daily work and collaborating with other technical leads (UX, Backend, QA, Frontend).",
+      "Scaled and maintained an Nx monorepo architecture supporting four React web apps and a React Native mobile app (stack: React.js, React Native, React Query, RX.js).",
+      "Designed a framework-agnostic data layer shared across platforms, enabling faster feature development across web and mobile.",
+      "Designed and developed an interactive graph using drag & drop, SVG, Cytoscape, and React Flow."
+    ]
+  },
+  {
+    "date": "Jan 2022 - Sep 2023",
+    "title": "Senior Software Engineer",
+    "company": "Spyrosoft SA",
+    "description": [
+      "Worked on a flexible monorepo frontend using React.js for the UI layer, RX.js + Akita for data layer, and Nx for architecture following DDD principles.",
+      "Conducted technical verifications for new candidates."
+    ]
+  },
+  {
+    "date": "Jul 2020 - Dec 2021",
+    "title": "Software Engineer",
+    "company": "Spyrosoft SA",
+    "description": [
+      "Created a standalone micro-app for data visualization in a grid (ag-grid) using Angular 8.",
+      "Developed a custom TypeScript framework and build setup in Rollup.js for an app compatible with the HbbTV standard.",
+      "Joined a team working on a React Native application, creating animated views with navigation (stack: React Native, Redux Saga, i18next)."
+    ]
+  },
+  {
+    "date": "Mar 2019 - Jun 2020",
+    "title": "Software Engineer",
+    "company": "Motorola Solutions Systems Sp. z o.o.",
+    "description": [
+      "Participated in moving a desktop tool for historical reporting to the cloud.",
+      "Responsible for the frontend layer and assisted backend developers with microservices in Spring Boot.",
+      "Supported DevOps Engineers in deployment tasks (Python).",
+      "Contributed to a version of the tool developed using Tableau BI."
+    ]
+  },
+  {
+    "date": "May 2018 - Mar 2019",
+    "title": "Software Developer",
+    "company": "Motorola Solutions Systems Sp. z o.o.",
+    "description": [
+      "Created a new web version of the real-time monitoring dashboard.",
+      "Developed frontend in Angular and backend in JavaEE."
+    ]
+  },
+  {
+    "date": "Jul 2017 - Apr 2018",
+    "title": "Junior Software Engineer",
+    "company": "Motorola Solutions Systems Sp. z o.o.",
+    "description": [
+      "Joined the team of backend engineers creating a new version of the real-time monitoring dashboard.",
+      "Responsible for adding new features to the backend written in JavaEE."
+    ]
+  },
+  {
+    "date": "Jul 2016 - Aug 2016",
+    "title": "Intern",
+    "company": "Comarch",
+    "description": [
+      "Creating ORM based on myBatis and JPA"
+    ]
+  }
+]

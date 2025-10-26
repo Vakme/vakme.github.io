@@ -1,6 +1,7 @@
 ---
 import BlogPost from "./BlogPost.astro";
 import Heading from "../ui/Heading.astro";
+import {postListSchema} from "./post.types.ts";
 
 // Prop to determine whether to exclude the latest post or a specific post
 export interface Props {
@@ -10,36 +11,40 @@ export interface Props {
 }
 
 const { excludeLatest = false, currentPostUrl = "", all = false } = Astro.props;
+const response = await fetch("https://dev.to/api/articles?username=vakme");
+const parsedResponse = postListSchema.safeParse(await response.json());
+const data = parsedResponse.success ? parsedResponse.data : [];
 
-const allPosts = await Astro.glob("../../pages/blog/posts/*.md");
-// Sort by date in descending order (newest first)
-allPosts.sort((a, b) => {
-  const dateA = new Date(a.frontmatter.pubDate).getTime();
-  const dateB = new Date(b.frontmatter.pubDate).getTime();
-  return dateB - dateA;
-});
-
-// Filter posts according to props
-let postsToShow = allPosts;
-
-if (currentPostUrl) {
-  // Exclude current post if its URL is provided
-  postsToShow = postsToShow.filter((post) => {
-    if (!post.url) return false; // If no URL, keep the post
-    // Normalize URLs for comparison
-    const normalizedPostUrl = post.url.replace(/\/$/, ""); // Remove trailing slash if exists
-    const normalizedCurrentUrl = currentPostUrl.replace(/\/$/, ""); // Remove trailing slash if exists
-    return normalizedPostUrl !== normalizedCurrentUrl;
-  });
-} else if (excludeLatest) {
-  // If no specific URL but want to exclude the latest
-  postsToShow = postsToShow.slice(1);
-}
-
-// Limit to 4 posts if all is false
-if (!all) {
-  postsToShow = postsToShow.slice(0, 4);
-}
+//
+// const allPosts = await Astro.glob("../../pages/blog/posts/*.md");
+// // Sort by date in descending order (newest first)
+// allPosts.sort((a, b) => {
+//   const dateA = new Date(a.frontmatter.pubDate).getTime();
+//   const dateB = new Date(b.frontmatter.pubDate).getTime();
+//   return dateB - dateA;
+// });
+//
+// // Filter posts according to props
+// let postsToShow = allPosts;
+//
+// if (currentPostUrl) {
+//   // Exclude current post if its URL is provided
+//   postsToShow = postsToShow.filter((post) => {
+//     if (!post.url) return false; // If no URL, keep the post
+//     // Normalize URLs for comparison
+//     const normalizedPostUrl = post.url.replace(/\/$/, ""); // Remove trailing slash if exists
+//     const normalizedCurrentUrl = currentPostUrl.replace(/\/$/, ""); // Remove trailing slash if exists
+//     return normalizedPostUrl !== normalizedCurrentUrl;
+//   });
+// } else if (excludeLatest) {
+//   // If no specific URL but want to exclude the latest
+//   postsToShow = postsToShow.slice(1);
+// }
+//
+// // Limit to 4 posts if all is false
+// if (!all) {
+//   postsToShow = postsToShow.slice(0, 4);
+// }
 ---
 
 <section
@@ -52,21 +57,22 @@ if (!all) {
       </div>
     )
   }
+    {JSON.stringify(data)}
 
-  <div class="flex flex-col gap-8 w-full mx-auto">
-    {
-      postsToShow.map((post) => (
-        <BlogPost
-          url={post.url}
-          title={post.frontmatter.title}
-          date={post.frontmatter.pubDate}
-          tags={post.frontmatter.tags}
-          languages={post.frontmatter.languages}
-          image={post.frontmatter.image}
-        />
-      ))
-    }
-  </div>
+  <!--<div class="flex flex-col gap-8 w-full mx-auto">-->
+  <!--  {-->
+  <!--    postsToShow.map((post) => (-->
+  <!--      <BlogPost-->
+  <!--        url={post.url}-->
+  <!--        title={post.frontmatter.title}-->
+  <!--        date={post.frontmatter.pubDate}-->
+  <!--        tags={post.frontmatter.tags}-->
+  <!--        languages={post.frontmatter.languages}-->
+  <!--        image={post.frontmatter.image}-->
+  <!--      />-->
+  <!--    ))-->
+  <!--  }-->
+  <!--</div>-->
   {
     !all && (
       <div id="morePosts" class="w-full flex justify-center text-center my-12">

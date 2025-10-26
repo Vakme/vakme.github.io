@@ -7,18 +7,17 @@ const {
   pageTitle = "NeonMint by EFEELE 🚀",
   description = "Welcome to NeonMint by EFEELE, where I develop software and share knowledge.",
   ogimage = {
-    url: "/images/imagedefault.webp",
+    url: "./images/imagedefault.webp",
     alt: "Default image of EFEELE",
   },
 } = Astro.props;
 
 const siteUrl = new URL(Astro.url).origin;
 const SEO = {
-  sitename: "NeonMint by EFEELE🚀",
+  sitename: "Bielak.dev",
   url: siteUrl,
   locale: "en_US",
-  author: "Fernando Lopez | EFEELE",
-  twitter: "@efeeledev",
+  author: "Aleksandra Bielak | Bielak.dev",
 };
 
 
@@ -27,7 +26,7 @@ const twitterimage = `${siteUrl}${ogimage.url}`;
 
 <html
   lang="en"
-  class="dark:bg-[#0E0E11] bg-mint-50/5 font-montserrat scroll-smooth"
+  class="dark:bg-[#0E0E11] bg-mint-50/5 font-roboto scroll-smooth"
 >
   <head>
     <meta charset="UTF-8" />
@@ -64,7 +63,6 @@ const twitterimage = `${siteUrl}${ogimage.url}`;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={twitterimage} />
     <meta name="twitter:image:alt" content={ogimage.alt} />
-    <meta name="twitter:site" content={SEO.twitter} />
   
     <meta name="theme-color" content="#0E0E11"/>
 
@@ -76,7 +74,7 @@ const twitterimage = `${siteUrl}${ogimage.url}`;
     <SpeedInsights/>
     <div class="blur-circle"></div>
     <div
-      style="  background:linear-gradient(45deg, rgba(96, 250, 155, 0) 10.79%, rgba(96, 250, 170, 0.03) 40.92%, rgba(96, 250, 155, 0) 90.35%)"
+      style="  background:linear-gradient(45deg, rgba(111,96,250,0) 10.79%, rgba(96,117,250,0.03) 40.92%, rgba(96,150,250,0) 90.35%)"
       class="fixed top-0 left-0 w-full h-full pointer-events-none -z-1"
     >
     </div>

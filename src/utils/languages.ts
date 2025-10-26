@@ -110,8 +110,71 @@ export const languages: Record<string, Language> = {
     name: "Python",
     iconName: "python",
   },
+    expressjs: {
+      name: 'Express.JS',
+        iconName: "expressjs",
+    },
+    java: {
+      name: 'Java',
+        iconName: "java",
+    },
+    jest: {
+      name: 'Jest',
+        iconName: "jest",
+    },
+    nx: {
+      name: 'Nx',
+        iconName: "nx",
+    },
+    playwright: {
+      name: 'Playwright',
+        iconName: "playwright",
+    },
+    postgresql: {
+      name: 'PostgreSQL',
+        iconName: "postgresql",
+    },
+    react: {
+      name: 'React.js',
+        iconName: "react",
+    },
+    reactnative: {
+      name: 'React Native',
+        iconName: "react",
+    },
+    rxjs: {
+      name: "RxJS",
+        iconName: "rxjs",
+    },
+    storybook: {
+      name: 'Storybook',
+        iconName: "storybook",
+    },
+    vite: {
+      name: 'Vite',
+        iconName: "vitejs",
+    },
+    vue: {
+      name: 'Vue',
+        iconName: "vue",
+    },
+    yarn: {
+      name: "Yarn",
+        iconName: "yarn",
+    },
+    webcomponents: {
+      name: 'WebComponents',
+        iconName: "webcomponents",
+    },
+    devto: {
+      name: 'DEV.TO',
+      iconName: "devto",
+    }
 };
 
 export const getLanguage = (lang: string): Language => {
-  return languages[lang] || languages.html;
+  return languages[lang] || {
+      name: lang,
+      iconName: null,
+  };
 }; 
