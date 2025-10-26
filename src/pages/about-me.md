@@ -3,7 +3,7 @@ layout: /src/layouts/MarkdownAbout.astro
 title: "Aleksandra Bielak | Bielak.dev"
 author: "Aleksandra Bielak"
 image:
-  url: "./images/portrait.jpg"
+  url: "/images/portrait.jpg"
   alt: "Photo of Aleksandra Bielak"
 ---
 I’m a Lead Frontend Developer (Angular/React/Vue) based in Kraków, Poland.

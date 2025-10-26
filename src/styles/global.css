@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: 'QueensidesBold';
-    src: url('./fonts/Queensides Bold.ttf') format('truetype');
+    src: url('/fonts/Queensides Bold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -14,7 +14,7 @@
 
 @font-face {
     font-family: 'QueensidesLight';
-    src: url('./fonts/Queensides Light.ttf') format('truetype');
+    src: url('/fonts/Queensides Light.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;

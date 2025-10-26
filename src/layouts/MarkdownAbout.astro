@@ -41,7 +41,7 @@ const { frontmatter } = Astro.props;
               </div>
               <div class="relative z-20 flex w-full rounded-full bg-mint-900">
                 <div
-                  class="w-full aspect-square rounded-full bg-[url(./images/portrait.jpg)] bg-center bg-cover"
+                  class="w-full aspect-square rounded-full bg-[url(/images/portrait.jpg)] bg-center bg-cover"
                   aria-label="Photo of Fernando Aldair López Ponce (EFEELE) for the blog"
                 >
                   <a
@@ -69,7 +69,7 @@ const { frontmatter } = Astro.props;
       </div>
         <div class="flex gap-4 justify-center items-center">
         <Button
-                link={'./files/Aleksandra_Bielak_CV.pdf'}
+                link={'/files/Aleksandra_Bielak_CV.pdf'}
                 text="Download my resume"
                 iconName="person"
                 variant="dark"
